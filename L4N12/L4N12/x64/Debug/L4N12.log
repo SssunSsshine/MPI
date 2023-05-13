@@ -1,0 +1,3 @@
+﻿  L4N12.cpp
+D:\User\unic\PP\PpIrochka\L4N12\L4N12\L4N12.cpp(25,25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  L4N12.vcxproj -> D:\User\unic\PP\PpIrochka\L4N12\x64\Debug\L4N12.exe
