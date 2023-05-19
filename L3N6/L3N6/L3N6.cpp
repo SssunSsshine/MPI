@@ -17,16 +17,16 @@ void sum_unequal_value(int* invec, int* inoutvec, int* len, MPI_Datatype* dtype)
     int i;
     for (i = 0; i < *len - 1; i++)
     {
-        if (invec[i] != invec[*len - 1] && inoutvec[i] != invec[*len - 1]) {
+        if (inoutvec[*len - 1] == 1 && invec[*len - 1] == 1 || inoutvec[*len - 1] == 0 && invec[*len - 1] == 1 && inoutvec[i] != invec[*len - 2]
+            || inoutvec[*len - 1] == 1 && invec[*len - 1] == 0 && invec[i] != invec[*len - 2] || invec[i] != invec[*len - 2] && inoutvec[i] != invec[*len - 2]) {
             inoutvec[i] = inoutvec[i] + invec[i];
         }
-        else if (invec[i] != invec[*len - 1] && inoutvec[i] == invec[*len - 1]) {
+        else if (invec[i] != invec[*len - 2] && inoutvec[i] == invec[*len - 2]) {
             inoutvec[i] = invec[i];
         }
-        else if (invec[i] == invec[*len - 1] && inoutvec[i] == invec[*len - 1]) {
+        else if (invec[i] == invec[*len - 2] && inoutvec[i] == invec[*len - 2]) {
             inoutvec[i] = 0;
         }
-
     }
 }
 
