@@ -28,6 +28,7 @@ void sum_unequal_value(int* invec, int* inoutvec, int* len, MPI_Datatype* dtype)
             inoutvec[i] = 0;
         }
     }
+    inoutvec[*len - 1] = 1;
 }
 
 void random_array(int* arr, int len)
